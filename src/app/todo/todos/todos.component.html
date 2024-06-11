@@ -1,0 +1,13 @@
+<div class="title">
+    <h1>나의 하루</h1>
+    <h1>{{today | date:'M월 d일'}}</h1> <!-- 파이브 기눙 (데이터 정형)-->
+</div>
+<div >
+    <div *ngFor="let todo of todos" (click)="togleTodo(todo)">
+        <app-todo [todo]="todo"></app-todo>
+    </div>
+</div>
+<div>
+    <app-add-todo (onTodoAdded)="addTodo($event)"> </app-add-todo>
+</div>
+<!-- {{todos | json }}  json 형태 데이터 볼 수 있음   -->
